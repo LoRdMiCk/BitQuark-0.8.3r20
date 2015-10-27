@@ -36,7 +36,10 @@ unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
 uint256 hashGenesisBlock("0x00000b9cf0b9bb2437283f28d378e5f9644c643f25e1c80b2cd9fdd6510d33f1");
+<<<<<<< HEAD
 uint256 hashGenesisBlockTestNet("0x0000070a4ce2dcc31f05a3b6c115813b10d1b4f075992c14c2204499843cb34c");
+=======
+>>>>>>> 5bab26b819f755ef1afeb185946cecf56a39c698
 static const unsigned int timeGenesisBlock = 1388710861;
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20);
 CBlockIndex* pindexGenesisBlock = NULL;
@@ -1349,8 +1352,15 @@ unsigned int static DarkGravityWave3(const CBlockIndex* pindexLast, const CBlock
 
 unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock) {
 	if( fTestNet ) {
+<<<<<<< HEAD
 		if( pindexLast->nHeight+1 >= 0 ) {
 			return DarkGravityWave3(pindexLast, pblock);
+=======
+		if( pindexLast->nHeight+1 >= 15 ) {
+			return DarkGravityWave3(pindexLast, pblock);
+		} else if( pindexLast->nHeight+1 >= 10 ) {
+			return DarkGravityWave2(pindexLast, pblock);
+>>>>>>> 5bab26b819f755ef1afeb185946cecf56a39c698
 		}
 	} else {
 		if( pindexLast->nHeight+1 >= 1360000 ) {
@@ -2938,7 +2948,11 @@ bool LoadBlockIndex()
         pchMessageStart[1] = 0x1A;
         pchMessageStart[2] = 0x39;
         pchMessageStart[3] = 0xF8;
+<<<<<<< HEAD
         hashGenesisBlock = uint256("0x0000070a4ce2dcc31f05a3b6c115813b10d1b4f075992c14c2204499843cb34c");
+=======
+        hashGenesisBlock = uint256("0x00000e5e37c42d6b67d0934399adfb0fa48b59138abb1a8842c88f4ca3d4ec96");
+>>>>>>> 5bab26b819f755ef1afeb185946cecf56a39c698
     }
 
     //
@@ -3004,9 +3018,14 @@ CBlock(hash=00000e5e37c42d6b67d0934399adfb0fa48b59138abb1a8842c88f4ca3d4ec96, ve
 
         if (fTestNet)
         {
+<<<<<<< HEAD
 			pszTimestamp="Oct 11 2015, Russian strikes kill ISIS Leader!";
             block.nTime    = 1444608501;
             block.nNonce   = 1514109;
+=======
+            block.nTime    = 1386926966;
+            block.nNonce   = 13080176;
+>>>>>>> 5bab26b819f755ef1afeb185946cecf56a39c698
         }
 
         //// debug print

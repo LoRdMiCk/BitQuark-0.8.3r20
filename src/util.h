@@ -12,10 +12,16 @@
 #ifndef WIN32
 #include <sys/types.h>
 #include <sys/time.h>
+<<<<<<< HEAD
 typedef int pid_t; /* define for Windows compatibility */
 #include <sys/resource.h>
 #else
 
+=======
+#include <sys/resource.h>
+#else
+typedef int pid_t; /* define for Windows compatibility */
+>>>>>>> 5bab26b819f755ef1afeb185946cecf56a39c698
 #endif
 #include <map>
 #include <list>

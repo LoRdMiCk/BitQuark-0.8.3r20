@@ -13,6 +13,7 @@ USE_IPV6:=1
 INCLUDEPATHS= \
  -I"$(CURDIR)" \
  -I"$(CURDIR)"/obj \
+<<<<<<< HEAD
  -I"$(DEPSDIR)/boost_1_50_0" \
  -I"$(DEPSDIR)/db-4.8.30.NC/build_unix" \
  -I"$(DEPSDIR)/openssl-1.0.1g/include" \
@@ -22,6 +23,17 @@ LIBPATHS= \
  -L"$(DEPSDIR)/boost_1_50_0/stage/lib" \
  -L"$(DEPSDIR)/db-4.8.30.NC/build_unix" \
  -L"$(DEPSDIR)/openssl-1.0.1g"
+=======
+ -I"$(DEPSDIR)/boost_1_53_0" \
+ -I"$(DEPSDIR)/db-4.8.30.NC/build_unix" \
+ -I"$(DEPSDIR)/openssl-1.0.1e/include" \
+ -I"$(DEPSDIR)"
+
+LIBPATHS= \
+ -L"$(DEPSDIR)/boost_1_53_0/stage/lib" \
+ -L"$(DEPSDIR)/db-4.8.30.NC/build_unix" \
+ -L"$(DEPSDIR)/openssl-1.0.1e"
+>>>>>>> 5bab26b819f755ef1afeb185946cecf56a39c698
 
 LIBS= \
   $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a \
