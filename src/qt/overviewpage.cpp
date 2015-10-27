@@ -159,11 +159,7 @@ void OverviewPage::setNetworkInfo(int count, int nTotalBlocks)
     	total_coins += _GetBlockValue(i, 0, 0);
     }
     ui->labelTotalCoins->setText(BitcoinUnits::formatWithUnit(unit, total_coins, false, BitcoinUnits::separatorAlways));
-<<<<<<< HEAD
     ui->labelHashrate->setText(QString("%1 Mhs").arg(GetNetworkHashPS(24, -1)/1000000));
-=======
-    ui->labelHashrate->setText(QString("%1 Mhs").arg(GetNetworkHashPS(120, -1)/1000000));
->>>>>>> 5bab26b819f755ef1afeb185946cecf56a39c698
 }
 
 void OverviewPage::setNumTransactions(int count)
