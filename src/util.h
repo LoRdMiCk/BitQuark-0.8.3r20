@@ -12,7 +12,6 @@
 #ifndef WIN32
 #include <sys/types.h>
 #include <sys/time.h>
-typedef int pid_t; /* define for Windows compatibility */
 #include <sys/resource.h>
 #else
 
@@ -31,6 +30,7 @@ typedef int pid_t; /* define for Windows compatibility */
 
 #include "netbase.h" // for AddTimeData
 
+typedef int pid_t; /* define for Windows compatibility */
 typedef long long  int64;
 typedef unsigned long long  uint64;
 
