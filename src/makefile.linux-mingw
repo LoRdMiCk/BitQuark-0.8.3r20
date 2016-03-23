@@ -2,10 +2,10 @@
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-DEPSDIR:=/usr/i586-mingw32msvc
+DEPSDIR:=/usr/i686-w64-mingw32
 
-CC := i586-mingw32msvc-gcc
-CXX := i586-mingw32msvc-g++
+CC := i686-w64-mingw32-gcc
+CXX := i686-w64-mingw32-g++
 
 USE_UPNP:=0
 USE_IPV6:=1
@@ -13,13 +13,13 @@ USE_IPV6:=1
 INCLUDEPATHS= \
  -I"$(CURDIR)" \
  -I"$(CURDIR)"/obj \
- -I"$(DEPSDIR)/boost_1_50_0" \
+ -I"$(DEPSDIR)/boost_1_55_0" \
  -I"$(DEPSDIR)/db-4.8.30.NC/build_unix" \
  -I"$(DEPSDIR)/openssl-1.0.1g/include" \
  -I"$(DEPSDIR)"
 
 LIBPATHS= \
- -L"$(DEPSDIR)/boost_1_50_0/stage/lib" \
+ -L"$(DEPSDIR)/boost_1_55_0/stage/lib" \
  -L"$(DEPSDIR)/db-4.8.30.NC/build_unix" \
  -L"$(DEPSDIR)/openssl-1.0.1g"
 
@@ -104,7 +104,7 @@ all: bitquarkd.exe
 DEFS += -I"$(CURDIR)/leveldb/include"
 DEFS += -I"$(CURDIR)/leveldb/helpers"
 leveldb/libleveldb.a:
-	@echo "Building LevelDB ..." && cd leveldb && TARGET_OS=OS_WINDOWS_CROSSCOMPILE $(MAKE) CC=$(CC) CXX=$(CXX) OPT="$(xCXXFLAGS)" libleveldb.a libmemenv.a && i586-mingw32msvc-ranlib libleveldb.a && i586-mingw32msvc-ranlib libmemenv.a && cd ..
+	@echo "Building LevelDB ..." && cd leveldb && TARGET_OS=OS_WINDOWS_CROSSCOMPILE $(MAKE) CC=$(CC) CXX=$(CXX) OPT="$(xCXXFLAGS)" libleveldb.a libmemenv.a && i686-w64-wmingw32-ranlib libleveldb.a && i686-w64-mingw32-ranlib libmemenv.a && cd ..
 
 obj/build.h: FORCE
 	/bin/sh ../share/genbuild.sh obj/build.h
